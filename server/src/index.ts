@@ -4,6 +4,7 @@ import express from "express";
 import { Server } from "socket.io";
 import { UserManager } from "./managers/UserManager";
 import cors from "cors";
+import "dotenv/config";
 
 const app = express();
 const PORT = 3000;
@@ -32,6 +33,6 @@ app.get("/api/test", (req, res) => {
   res.status(200).json({ message: "GET request received successfully" });
 });
 
-server.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+server.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 });
