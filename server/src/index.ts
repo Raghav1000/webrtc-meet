@@ -3,10 +3,10 @@ import http from "http";
 import express from "express";
 import { Server } from "socket.io";
 import { UserManager } from "./managers/UserManager";
-import cors from 'cors'
+import cors from "cors";
 
 const app = express();
-const PORT = 3000
+const PORT = 3000;
 const server = http.createServer(app);
 
 const io = new Server(server, {
@@ -28,7 +28,10 @@ io.on("connection", (socket: Socket) => {
   });
 });
 
+app.get("/api/test", (req, res) => {
+  res.status(200).json({ message: "GET request received successfully" });
+});
+
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
-
