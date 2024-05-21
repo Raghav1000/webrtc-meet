@@ -1,7 +1,7 @@
 import { Socket } from "socket.io";
 import http from "http";
-import express from 'express';
-import { Server } from 'socket.io';
+import express from "express";
+import { Server } from "socket.io";
 import { UserManager } from "./managers/UserManager";
 
 const app = express();
@@ -9,9 +9,11 @@ const server = http.createServer(http);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://vercel.com/",
+    origin: "*",
   },
 });
+
+app.use(cors({ origin: "*" }));
 
 const userManager = new UserManager();
 
@@ -27,3 +29,7 @@ io.on("connection", (socket: Socket) => {
 server.listen(3000, () => {
   console.log("Listening on port 3000");
 });
+
+function cors(arg0: { origin: string }): any {
+  throw new Error("Function not implemented.");
+}
