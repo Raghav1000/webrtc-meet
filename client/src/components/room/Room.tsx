@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import { io, Socket } from "socket.io-client";
+import { AtomUserName } from "../../store/store";
+import "./Room.css";
 
 const url = "http://localhost:3000";
 
@@ -11,20 +14,16 @@ const Room = ({
   localAudioTrack: MediaStreamTrack | null;
   localVideoTrack: MediaStreamTrack | null;
 }) => {
+  const name = useRecoilValue(AtomUserName);
   const params = useParams();
   const roomId = params?.id;
   const [, setSocket] = useState<null | Socket>();
   const [lobby, setLobby] = useState(true);
   const [, setSendingPc] = useState<null | RTCPeerConnection>(null);
-  const [, setReceivingPc] = useState<null | RTCPeerConnection>(
-    null
-  );
-  const [, setRemoteVideoTrack] =
-    useState<MediaStreamTrack | null>(null);
-  const [, setRemoteAudioTrack] =
-    useState<MediaStreamTrack | null>(null);
-  const [, setRemoteMediaStream] =
-    useState<MediaStream | null>(null);
+  const [, setReceivingPc] = useState<null | RTCPeerConnection>(null);
+  const [, setRemoteVideoTrack] = useState<MediaStreamTrack | null>(null);
+  const [, setRemoteAudioTrack] = useState<MediaStreamTrack | null>(null);
+  const [, setRemoteMediaStream] = useState<MediaStream | null>(null);
   const remoteVideoRef = useRef<HTMLVideoElement>(null);
   const localVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -190,11 +189,22 @@ const Room = ({
   }, [localVideoRef]);
 
   return (
-    <div>
-      Hi {roomId}
-      <video autoPlay width={400} height={400} ref={localVideoRef} />
-      {lobby ? "Waiting to connect you to someone" : null}
-      <video autoPlay width={400} height={400} ref={remoteVideoRef} />
+    <div className="room-container">
+      <div className="room-left-container">
+        <div>
+          <video className="video-room" autoPlay ref={localVideoRef} />
+        </div>
+        <div>
+          {lobby ? (
+            "Waiting to connect you to someone"
+          ) : (
+            <video className="video-room" autoPlay ref={remoteVideoRef} />
+          )}
+        </div>
+      </div>
+      <div className="room-right-container">
+        Connection Established. Enjoy your time.
+      </div>
     </div>
   );
 };

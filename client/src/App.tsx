@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { HiVideoCamera } from "react-icons/hi";
 import { useRecoilState } from "recoil";
 import { AtomUserName } from "./store/store";
+import { BiMicrophone } from "react-icons/bi";
 
 const App = () => {
   const [name, setName] = useRecoilState(AtomUserName);
@@ -22,7 +23,7 @@ const App = () => {
         <div className="heading-container">
           <h2>WebRTC one-one Meet</h2>
           <span className="sub-heading">
-            Supporting peer to peer video calls and chats.
+            Supporting peer to peer video calls.
           </span>
         </div>
         <div className="input-container">
@@ -47,7 +48,7 @@ const App = () => {
           className="img-2"
         />
         <HiVideoCamera className="camera" size={20} />
-        <BsFillChatLeftFill className="chat" size={18} />
+        <BiMicrophone className="chat" size={20} />
       </div>
     </div>
   );
