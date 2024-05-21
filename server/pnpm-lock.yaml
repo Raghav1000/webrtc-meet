@@ -8,9 +8,6 @@ dependencies:
   express:
     specifier: ^4.19.2
     version: 4.19.2
-  i:
-    specifier: ^0.3.7
-    version: 0.3.7
   socket.io:
     specifier: ^4.7.5
     version: 4.7.5
@@ -414,11 +411,6 @@ packages:
       setprototypeof: 1.2.0
       statuses: 2.0.1
       toidentifier: 1.0.1
-    dev: false
-
-  /i@0.3.7:
-    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
-    engines: {node: '>=0.4'}
     dev: false
 
   /iconv-lite@0.4.24:
