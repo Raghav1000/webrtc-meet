@@ -5,7 +5,7 @@ import { io, Socket } from "socket.io-client";
 import { AtomUserName } from "../../store/store";
 import "./Room.css";
 
-const url = "http://localhost:3000";
+const url = "https://vercel.com/raghav1000s-projects/webrtc-meet-5lx2/3pJhnKGCo1UKKrMq9t8yG2eS92it";
 
 const Room = ({
   localAudioTrack,
