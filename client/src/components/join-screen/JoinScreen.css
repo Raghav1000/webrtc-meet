@@ -1,0 +1,49 @@
+.join-screen-container {
+  background: hsl(204 100% 5%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.video {
+  height: 400px;
+  width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(231, 231, 231, 0.14) 0px 3px 8px;
+}
+
+.join {
+  height: 52px;
+  font-size: 1.1rem;
+  padding-inline: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.437);
+  background: hsla(205, 69%, 46%, 0.302);
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  width: 260px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.join:hover {
+  background-color: hsla(205, 58%, 52%, 0.302);
+}
+
+.join > svg {
+    height: 12px;
+}

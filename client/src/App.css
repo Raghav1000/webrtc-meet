@@ -1,0 +1,117 @@
+.app-container {
+  background: hsl(204 100% 5%);
+  display: grid;
+  grid-template-columns: 55vw 45vw;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+
+.left-container {
+  margin-left: 5rem;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 800;
+  font-size: 60px;
+  background: linear-gradient(to right, hsl(98 100% 62%), hsl(204 100% 59%));
+  background-clip: text;
+  color: transparent;
+}
+
+.sub-heading {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-container > svg {
+  height: 52px;
+  padding-inline: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.437);
+  background: hsla(205, 69%, 46%, 0.302);
+  cursor: pointer;
+  color: white;
+}
+
+.input-container > svg:hover {
+  background: hsla(205, 69%, 46%, 0.802);
+}
+
+.right-container {
+  height: 100vh;
+  background-color: rgb(220, 252, 242);
+  position: relative;
+}
+
+.img-1,
+.img-2 {
+  height: 250px;
+  width: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: absolute;
+}
+.img-1 {
+  left: 2rem;
+  top: 4rem;
+}
+
+.img-2 {
+  right: 2rem;
+  bottom: 4rem;
+}
+
+.camera,
+.chat {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.546);
+  color: hsla(205, 100%, 5%, 0.639);
+  border-radius: 6px;
+  padding: 0.4rem;
+}
+
+.camera {
+  top: 47.5%;
+  left: 55%;
+}
+
+.chat {
+  top: 47.5%;
+  left: 45%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+  }
+
+  .left-container {
+    margin-left: 0;
+  }
+
+  .input-container {
+    justify-content: center;
+  }
+
+  .right-container {
+    display: none;
+  }
+}

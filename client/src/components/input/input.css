@@ -1,0 +1,15 @@
+.input {
+  height: 50px;
+  outline: none;
+  border: none;
+  width: 16rem;
+  font-size: 1rem;
+  color: white;
+  text-indent: 1rem;
+  background: hsla(205, 69%, 46%, 0.302);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.437);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
