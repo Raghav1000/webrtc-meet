@@ -3,9 +3,10 @@ import http from "http";
 import express from "express";
 import { Server } from "socket.io";
 import { UserManager } from "./managers/UserManager";
+import cors from 'cors'
 
 const app = express();
-const server = http.createServer(http);
+const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
@@ -30,6 +31,3 @@ server.listen(3000, () => {
   console.log("Listening on port 3000");
 });
 
-function cors(arg0: { origin: string }): any {
-  throw new Error("Function not implemented.");
-}
